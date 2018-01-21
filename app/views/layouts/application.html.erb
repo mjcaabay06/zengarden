@@ -1,21 +1,93 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%= content_for?(:title) ? yield(:title) : "Zengarden" %></title>
-    <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Zengarden" %>">
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track' => 'reload' %>
-    <%= csrf_meta_tags %>
-  </head>
-  <body>
-    <header>
-      <%= render 'layouts/navigation' %>
-    </header>
-    <main role="main">
-       <%= render 'layouts/messages' %>
-       asd
-       <%= yield %>
-    </main>
-  </body>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title><%= content_for?(:title) ? yield(:title) : "Zengarden" %></title>
+        <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Zengarden" %>">
+        <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => 'reload' %>
+        <%= javascript_include_tag 'application', 'data-turbolinks-track' => 'reload' %>
+        <%= csrf_meta_tags %>
+        <%= yield :header %>
+	</head>
+	<body>
+		<header>
+			<%= render 'layouts/navigation' %>
+		</header>
+		<main role="main">
+			<%= render 'layouts/messages' %>
+            <%= yield %>
+		</main>
+		<footer>
+			<div class="contacts">
+				<div class="container">
+					<div class="col-sm-2">
+						<div class="row">
+							<div class="col-md-12">
+								<div class="row">
+									<a href="/"><img src="assets/zenGardenLogo.png" /></a>
+								</div>
+							</div>
+							<div class="col-md-12 social">
+								<div class="row text-center">
+									<a href="#">
+										<i class="fa fa-facebook" aria-hidden="true"></i>
+									</a>
+									<a href="#">
+										<i class="fa fa-instagram" aria-hidden="true"></i>
+									</a>
+									<a href="#">
+										<i class="fa fa-twitter" aria-hidden="true"></i>
+									</a>
+									<a href="#">
+										<i class="fa fa-google-plus" aria-hidden="true"></i>
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-sm-4"></div>
+					<div class="col-sm-6">
+						<div class="row">
+							<div class="col-md-6">
+								<h4>LOREM IPSUM</h4>
+								<ul class="nav flex-column">
+									<li class="nav-item">
+										<a href="#" class="nav-link">ABOUT US</a>
+									</li>
+									<li class="nav-item">
+										<a href="#" class="nav-link">GALLERY</a>
+									</li>
+									<li class="nav-item">
+										<a href="#" class="nav-link">ROOM PACKAGES</a>
+									</li>
+									<li class="nav-item">
+										<a href="#" class="nav-link">PROGRAM AND EVENTS</a>
+									</li>
+									<li class="nav-item">
+										<a href="#" class="nav-link">INQUIRY</a>
+									</li>
+									<li class="nav-item">
+										<a href="#" class="nav-link">CONTACT US</a>
+									</li>
+
+								</ul>
+							</div>
+							<div class="col-md-6">
+								<h4>ZEN GARDEN</h4>
+								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+								<br/>
+								<p>
+									Contact No.: 0912 345 6789<br/>
+									Email: zengarden@email.com
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="copyright">
+				&copy; 2017 Zen Garden Tagaytay
+			</div>
+		</footer>
+	</body>
 </html>
