@@ -3,13 +3,6 @@
 		background-image: url('assets/event-banner.jpg');
 		background-position: 50%;
 	}
-	/*button.btn{
-		padding: 19px !important;
-		width: 100%;
-		border-radius: 0 !important;
-		background-color: #6EAE00;
-		color: #fff !important;
-	}*/
 
 	.item-con{
 		position: relative;
@@ -24,7 +17,6 @@
 		height: 100%;
 	}
 	.txt-con{
-		background-color: #E9E9E9;
 		height: 100%;
 		position: absolute;
 	}
@@ -35,22 +27,31 @@
 	.l0{
 		left: 0;
 	}
+	@media only screen and (max-width: 767px) {
+		.img-con,
+		.txt-con{
+			position: unset;
+		}
+		.item-con{
+			height: auto;
+		}
+		.img-con{
+			height: 355px;
+		}
+		.txt-con{
+			height: auto;
+			background-color: transparent;
+		}
+	}
 </style>
 
 <section class="sub-top banner">
-	<div class="col-sm-4 col-sm-offset-4 title text-center">
-		<h1>Lorem ipsum</h1>
-		<p>Lorem ipsum dolor sit amet, incididunt ut labore et dolore magna aliqua.</p>
+	<div class="col-md-6 col-md-offset-3 title text-center">
+		<h1>program and events</h1>
 	</div>
 </section>
 
 <div class="container main">
-	<div class="col-md-6 col-md-offset-3">
-		<div class="row text-center">
-			<strong><h3>PROGRAM AND EVENTS</h3></strong>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-		</div>
-	</div>
 	
 	<div class="col-md-12 mb-25 mt-25">
 		<div class="row item-con">

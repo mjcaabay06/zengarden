@@ -1,6 +1,6 @@
 <style type="text/css">
 	section.sub-top{
-		background-image: url('assets/zenGardenImage2.jpg');
+		background-image: url('/assets/zenGardenImage2.jpg');
 	}
 	.slider .main{
 		height: 325px;
@@ -15,6 +15,23 @@
 		background-repeat: no-repeat;
 	}
 
+	.inner-addon{
+		position: relative;
+		padding: 15px;
+	}
+	.inner-addon .fa{
+		position: absolute;
+		padding: 6px 10px;
+		pointer-events: none;
+	}
+	.right-addon .fa{
+		right: 10px;
+		font-size: 20px;
+	}
+	.right-addon input{
+		padding-right: 30px;
+	}
+
 	@media only screen and (max-width: 767px) {
 		.pr-15{
 			padding-right: 0 !important;
@@ -27,7 +44,7 @@
 
 <section class="sub-top banner">
 	<div class="col-md-6 col-md-offset-3 title text-center">
-		<h1>room packages</h1>
+		<h1>available rooms</h1>
 		<p>Go in for a truly refreshing experience by lounging in our Japanese-inspired, nature-themed modern rooms that are perfect for solo, twin or group accommodation.</p>
 	</div>
 </section>
@@ -35,16 +52,40 @@
 <div class="container main rooms">
 	<div class="col-md-12 mb-25 mt-25">
 		<div class="row">
-			<div class="col-md-7 col-md-push-5">
+			<form method="post" class="form-horizontal tb-form">
+				<div class="form-group" style="margin: 0">
+					<div class="col-md-9 inputs">
+						<div class="col-md-4 inner-addon right-addon">
+							<i class="fa fa-calendar"></i>
+							<input type="text" class="form-control withdatepicker" placeholder="Check In Date" />
+						</div>
+						<div class="col-md-4 inner-addon right-addon">
+							<i class="fa fa-calendar"></i>
+							<input type="text" class="form-control withdatepicker" placeholder="Check Out Date" />
+						</div>
+					</div>
+					<div class="col-md-3">
+						<div class="row">
+							<button class="btn btn-lg btn-book">check availability</button>
+						</div>
+					</div>
+					<div class="clearfix"></div>
+				</div>
+			</form>
+		</div>
+	</div>
+	<div class="col-md-12 mb-25 mt-25">
+		<div class="row">
+			<div class="col-md-7">
 				<div class="slider">
-					<div class="col-xs-12 main" style="background-image: url('assets/zenGardenRoom1.jpg');"></div>
-					<div class="col-xs-4 img" style="background-image: url('assets/zenGardenRoom1.jpg');"></div>
-					<div class="col-xs-4 img" style="background-image: url('assets/zenGardenRoom3.jpg');"></div>
-					<div class="col-xs-4 img" style="background-image: url('assets/zenGardenRoom2.jpg');"></div>
+					<div class="col-xs-12 main" style="background-image: url('/assets/zenGardenRoom1.jpg');"></div>
+					<div class="col-xs-4 img" style="background-image: url('/assets/zenGardenRoom1.jpg');"></div>
+					<div class="col-xs-4 img" style="background-image: url('/assets/zenGardenRoom3.jpg');"></div>
+					<div class="col-xs-4 img" style="background-image: url('/assets/zenGardenRoom2.jpg');"></div>
 				</div>
 				<div class="clearfix"></div>
 			</div>
-			<div class="col-md-5 col-md-pull-7">
+			<div class="col-md-5">
 				<div class="pr-15">
 					<strong><h3>LOREM IPSUM</h3></strong>
 					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
@@ -66,11 +107,6 @@
 						</ul>
 					</div>
 					<div class="clearfix"></div>
-				</div>
-				<div class="row">
-					<div class="col-md-12">
-						<button class="btn btn-lg btn-book">check availability</button>
-					</div>
 				</div>
 			</div>
 			
@@ -80,16 +116,16 @@
 
 	<div class="col-md-12 mb-25 mt-25">
 		<div class="row">
-			<div class="col-md-7 col-md-push-5">
+			<div class="col-md-7">
 				<div class="slider">
-					<div class="col-xs-12 main" style="background-image: url('assets/zenGardenRoom1.jpg');"></div>
-					<div class="col-xs-4 img" style="background-image: url('assets/zenGardenRoom1.jpg');"></div>
-					<div class="col-xs-4 img" style="background-image: url('assets/zenGardenRoom3.jpg');"></div>
-					<div class="col-xs-4 img" style="background-image: url('assets/zenGardenRoom2.jpg');"></div>
+					<div class="col-xs-12 main" style="background-image: url('/assets/zenGardenRoom1.jpg');"></div>
+					<div class="col-xs-4 img" style="background-image: url('/assets/zenGardenRoom1.jpg');"></div>
+					<div class="col-xs-4 img" style="background-image: url('/assets/zenGardenRoom3.jpg');"></div>
+					<div class="col-xs-4 img" style="background-image: url('/assets/zenGardenRoom2.jpg');"></div>
 				</div>
 				<div class="clearfix"></div>
 			</div>
-			<div class="col-md-5 col-md-pull-7">
+			<div class="col-md-5">
 				<div class="pr-15">
 					<strong><h3>LOREM IPSUM</h3></strong>
 					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
@@ -111,11 +147,6 @@
 						</ul>
 					</div>
 					<div class="clearfix"></div>
-				</div>
-				<div class="row">
-					<div class="col-md-12">
-						<button class="btn btn-lg btn-book">check availability</button>
-					</div>
 				</div>
 			</div>
 			

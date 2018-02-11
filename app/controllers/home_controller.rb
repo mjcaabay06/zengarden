@@ -22,7 +22,4 @@ class HomeController < ApplicationController
 
   def amenities
   end
-
-  def team_building
-  end
 end

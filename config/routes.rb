@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'booking/index'
+
+  get 'team_building/index'
+
   root 'home#index'
 
   get '/gallery' => 'home#gallery'
@@ -8,7 +12,11 @@ Rails.application.routes.draw do
   get '/registration' => 'home#registration'
   get '/contact-us' => 'home#contact_us'
   get '/amenities' => 'home#amenities'
-  get '/team-building' => 'home#team_building'
+
+  get '/team-building' => 'team_building#index'
+  get '/team-building/:id' => 'team_building#show'
+
+  get '/booking/search' => 'booking#search'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

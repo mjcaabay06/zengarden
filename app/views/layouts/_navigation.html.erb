@@ -1,5 +1,6 @@
+<% url_trim = request.fullpath.split('/').blank? ? '' : request.fullpath.split('/')[1].split('?')[0] %>
 <%# navigation styled for Bootstrap 3.0 %>
-<nav class="navbar navbar-inverse">
+<nav class="navbar navbar-inverse <%= 'contact-us' if url_trim == 'contact-us' %>">
   <div class="container col-sm-12">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -9,7 +10,7 @@
         <span class="icon-bar"></span>
       </button>
       <a href="/" class="navbar-brand">
-        <img src="assets/zenGardenLogo.png" />
+        <img src="/assets/zenGardenLogo.png" />
       </a>
     </div>
     <div class="collapse navbar-collapse">

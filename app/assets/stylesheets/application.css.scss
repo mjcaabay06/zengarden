@@ -18,19 +18,174 @@
 
  @import "font-awesome";
 
+/* COLORSCHEME1 */
+body.colorscheme-1 main{
+	background-color: #f0f0f0;
+}
+
+body.colorscheme-1 button.btn-book,
+body.colorscheme-1 a.btn-book,
+body.colorscheme-1 button.btn-view,
+body.colorscheme-1 .search-container button{
+	background-color: #7c9e01;
+}
+
+body.colorscheme-1 .txt-con{
+	background-color: #3d2b29;
+}
+
+body.colorscheme-1 footer .contacts,
+body.colorscheme-1 .main.container .text-content,
+body.colorscheme-1 div.outside,
+body.colorscheme-1 .inquiry-form,
+body.colorscheme-1 .tb-form .inputs,
+body.colorscheme-1 .tb-con-desc,
+body.colorscheme-1 .navbar-inverse .navbar-toggle:hover,
+body.colorscheme-1 .navbar-inverse .navbar-toggle:focus{
+	background-color: #3d2b29;
+}
+
+body.colorscheme-1 .con{
+	background-color: #dbdbdb;
+}
+
+body.colorscheme-1 header .navbar.contact-us{
+	background-color: #2A2625;
+}
+
+body.colorscheme-1 footer .copyright{
+	background-color: #252120
+}
+
+@media only screen and (max-width: 767px) {
+	body.colorscheme-1 .navbar-collapse{
+		background-color: #3d2b29;
+	}
+}
+@media only screen and (min-width: 768px) and (max-width: 972px) {
+	body.colorscheme-1 .navbar-collapse{
+		background-color: #3d2b29;
+	}
+}
+
+/* COLORSCHEME2 */
+body.colorscheme-2 main{
+	background-color: #fcf5e3;
+}
+
+body.colorscheme-2 button.btn-book,
+body.colorscheme-2 a.btn-book,
+body.colorscheme-2 button.btn-view,
+body.colorscheme-2 .search-container button{
+	background-color: #5aa6b3;
+}
+
+body.colorscheme-2 .txt-con{
+	background-color: #ffffff;
+}
+
+body.colorscheme-2 footer .contacts,
+body.colorscheme-2 div.outside,
+body.colorscheme-2 .inquiry-form,
+body.colorscheme-2 .tb-form .inputs,
+body.colorscheme-2 .tb-con-desc,
+body.colorscheme-2 .navbar-inverse .navbar-toggle:hover,
+body.colorscheme-2 .navbar-inverse .navbar-toggle:focus{
+	background-color: #204813;
+}
+
+body.colorscheme-2 .main.container .text-content{
+	background-color: #5a830d;
+}
+
+body.colorscheme-2 .con{
+	background-color: #fcf5e3;
+}
+
+body.colorscheme-2 header .navbar.contact-us{
+	background-color: #111e0c;
+}
+
+body.colorscheme-2 footer .copyright{
+	background-color: #111e0c
+}
+
+@media only screen and (max-width: 767px) {
+	body.colorscheme-2 .navbar-collapse{
+		background-color: #204813;
+	}
+}
+@media only screen and (min-width: 768px) and (max-width: 972px) {
+	body.colorscheme-2 .navbar-collapse{
+		background-color: #204813;
+	}
+}
+
+
+/* COLORSCHEME3 */
+body.colorscheme-3 main{
+	background-color: #f6efd2;
+}
+
+body.colorscheme-3 button.btn-book,
+body.colorscheme-3 a.btn-book,
+body.colorscheme-3 button.btn-view,
+body.colorscheme-3 .search-container button{
+	background-color: #9d2f0c;
+}
+
+body.colorscheme-3 .txt-con{
+	background-color: #d7c5b1;
+}
+
+body.colorscheme-3 footer .contacts,
+body.colorscheme-3 .main.container .text-content,
+body.colorscheme-3 div.outside,
+body.colorscheme-3 .inquiry-form,
+body.colorscheme-3 .tb-form .inputs,
+body.colorscheme-3 .tb-con-desc,
+body.colorscheme-3 .navbar-inverse .navbar-toggle:hover,
+body.colorscheme-3 .navbar-inverse .navbar-toggle:focus{
+	background-color: #411c14;
+}
+
+body.colorscheme-3 .con{
+	background-color: #f6efd2;
+}
+
+body.colorscheme-3 header .navbar.contact-us{
+	background-color: #4d2a24;
+}
+
+body.colorscheme-3 footer .copyright{
+	background-color: #210f0d
+}
+
+@media only screen and (max-width: 767px) {
+	body.colorscheme-3 .navbar-collapse{
+		background-color: #411c14;
+	}
+}
+@media only screen and (min-width: 768px) and (max-width: 972px) {
+	body.colorscheme-3 .navbar-collapse{
+		background-color: #411c14;
+	}
+}
+
+
  input.form-control,
  textarea.form-control,
  select.form-control{
  	border: 0;
  	border-radius: 0;
- 	font-size: 17px;
+ 	font-size: 14px;
  }
 
- button.btn-book{
+ button.btn-book,
+ a.btn-book{
 	padding: 19px !important;
 	width: 100%;
 	border-radius: 0 !important;
-	background-color: #6EAE00;
 	color: #fff !important;
 	text-transform: uppercase;
 }
@@ -73,7 +228,6 @@ section.top{
 }
 
 main{
-	background-color: #F0F0F0;
 	padding: 0;
 	margin: 0;
 	margin-top: -150px;
@@ -113,6 +267,10 @@ header .navbar{
 	padding-bottom: 50px;
 }
 
+.tb-con-desc{
+	color: #fff;
+}
+
 footer{
 	color: #fff
 }
@@ -135,13 +293,11 @@ footer .nav-link:hover{
 }
 
 footer .contacts{
-	background-color: #3D2B29;
 	padding: 35px 0;
 }
 
 footer .copyright{
 	padding: 15px 0;
-	background-color: #252120;
 	font-size: 13px;
 	color: #fff;
 	text-align: center;
@@ -173,7 +329,6 @@ footer .copyright{
 	.navbar-collapse{
 		position: absolute;
 		width: 100%;
-		background-color: #402E2C;
 	}
 
 	section.sub-top{
@@ -203,6 +358,7 @@ footer .copyright{
 	footer img{
 		width: 150px;
 	}
+
 }
 
 @media only screen and (min-width: 768px) and (max-width: 972px) {
@@ -259,7 +415,6 @@ footer .copyright{
     	position: absolute;
     	left: 0;
     	width: 100%;
-    	background-color: #402E2C;
     }
     .navbar-nav.pull-right{
     	margin-top: 0;
