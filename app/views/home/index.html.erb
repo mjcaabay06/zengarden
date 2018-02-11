@@ -1,2 +1,145 @@
-<h1>Home#index</h1>
-<p>Find me in app/views/home/index.html.erb</p>
+<style type="text/css">
+	section.top{
+		position: relative;
+	}
+
+	section.top .title{
+		top: 25%;
+		color: #fff;
+		text-shadow: 1px 1px #000;
+	}
+
+	section.top .title h1{
+		font-size: 45px;
+	}
+	section.top .title p{
+		font-size: 21px;
+		line-height: 21px;
+	}
+
+	.search-container{
+		position: absolute;
+		bottom: 0;
+		right: 0;
+		width: 100%;
+		background-color: rgba(255,255,255,0.7)
+	}
+	.search-container .inputs .col-md-4{
+		padding: 15px 10px;
+	}
+	.search-container .inputs input,
+	.search-container .inputs select{
+		border: 0;
+		border-radius: 0;
+	}
+	.inner-addon{
+		position: relative;
+	}
+	.inner-addon .fa{
+		position: absolute;
+		padding: 6px 10px;
+		pointer-events: none;
+	}
+	.right-addon .fa{
+		right: 10px;
+		font-size: 20px;
+	}
+	.right-addon input{
+		padding-right: 30px;
+	}
+	.search-container button{
+		padding: 19px;
+		width: 100%;
+		border-radius: 0;
+		color: #fff;
+	}
+	.main.container{
+		position: relative;
+		min-height: 550px;
+		margin: 50px auto;
+	}
+	.main.container > [class*="col-"]{
+		position: absolute;
+		color: #fff;
+		bottom: 0;
+		height: 100%;
+	}
+
+	.main.container .img-content{
+		padding: 100px 0;
+	}
+	.main.container .img-content .img{
+		height: 100%;
+		background-size: cover;
+		background-position: top;
+		background-repeat: no-repeat;
+	}
+	.main.container .text-content{
+		right: 0;
+		padding: 50px 30px;
+	}
+	@media only screen and (max-width: 767px) {
+		section.top{
+			height: 580px;
+		}
+		section.top .title{
+			top: 50px;
+		}
+	}
+</style>
+
+
+<section class="top">
+	<div class="text-center title col-sm-4 col-sm-offset-4">
+		<h1>Lorem ipsum</h1>
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+	</div>
+	<div class="search-container">
+		<form method="post">
+			<div class="form-group" style="margin: 0">
+				<div class="col-md-9 inputs">
+					<div class="col-md-4 inner-addon right-addon">
+						<i class="fa fa-calendar"></i>
+						<input type="text" class="form-control withdatepicker" placeholder="Check In Date" />
+					</div>
+					<div class="col-md-4 inner-addon right-addon">
+						<i class="fa fa-calendar"></i>
+						<input type="text" class="form-control withdatepicker" placeholder="Check Out Date" />
+					</div>
+					<div class="col-md-4 inner-addon right-addon">
+						<select class="form-control">
+							<option>Choose Room</option>
+						</select>
+					</div>
+				</div>
+				<div class="col-md-3">
+					<div class="row">
+						<button class="btn btn-lg">BOOK NOW</button>
+					</div>
+				</div>
+				<div class="clearfix"></div>
+			</div>
+		</form>
+	</div>
+</section>
+<div class="container main">
+	<div class="col-md-7 img-content">
+		<div class="img" style="background-image: url('assets/zenGardenFacade2.jpg')"></div>
+	</div>
+	<div class="col-md-5 text-content">
+		<h1>Lorem ipsum</h1>
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+		<p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+		<p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+	</div>
+</div>
+
+<script type="text/javascript">
+	$(document).ready(function(){
+		$(".withdatepicker").datepicker({
+			autoclose: true,
+			todayHighlight: true,
+			format: 'yyyy-mm-dd'
+		});
+	});
+</script>

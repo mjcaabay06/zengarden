@@ -1,0 +1,144 @@
+<style type="text/css">
+	section.sub-top{
+		background-image: url('assets/zenGardenImage2.jpg');
+		margin-top: -10px;
+	}
+
+	.con{
+		background-color: #DADADA;
+		position: relative;
+	}
+	ul{
+		margin: 0;
+	}
+	ul li{
+		margin-bottom: 10px;
+	}
+
+	.img-con{
+		height: 100%;
+		position: absolute;
+		background-size: cover;
+		background-position: center;
+		background-repeat: no-repeat;
+	}
+	.l0{
+		left: 0
+	}
+	.r0{
+		right: 0
+	}
+
+	@media only screen and (max-width: 767px) {
+		section.sub-top {
+			margin-top: 0;
+		}
+		#f-con,
+		#amen-con{
+			padding: 15px !important;
+			z-index: 1;
+			background-color: rgba(0,0,0,0.5);
+			color: #fff;
+		}
+		#f-con h3, #f-con .mb-30,
+		#amen-con h3, #amen-con .mb-30{
+			text-align: center;
+		}
+
+		.img-con{
+			top: 0;
+			width: 100%;
+		}
+	}
+</style>
+
+<section class="sub-top banner">
+	<div class="col-md-6 col-md-offset-3 title text-center">
+		<h1>amenities</h1>
+	</div>
+</section>
+<div class="col-md-12">
+	<div class="row con">
+		<div class="col-sm-6" id="f-con" style="padding: 50px;">
+			<strong><h3 class="mb-0 mt-0">FACILITIES</h3></strong>
+			<p class="mb-30">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+			<div class="col-md-6">
+				<div class="row">
+					<ul>
+						<li>Lorem ipsum dolor sit amet</li>
+						<li>Lorem ipsum dolor sit amet</li>
+						<li>Lorem ipsum dolor sit amet</li>
+						<li>Lorem ipsum dolor sit amet</li>
+						<li>Lorem ipsum dolor sit amet</li>
+						<li>Lorem ipsum dolor sit amet</li>
+						<li>Lorem ipsum dolor sit amet</li>
+						<li>Lorem ipsum dolor sit amet</li>
+					</ul>
+				</div>
+			</div>
+			<div class="col-md-6">
+				<div class="row">
+					<ul>
+						<li>Lorem ipsum dolor sit amet</li>
+						<li>Lorem ipsum dolor sit amet</li>
+						<li>Lorem ipsum dolor sit amet</li>
+						<li>Lorem ipsum dolor sit amet</li>
+						<li>Lorem ipsum dolor sit amet</li>
+						<li>Lorem ipsum dolor sit amet</li>
+						<li>Lorem ipsum dolor sit amet</li>
+						<li>Lorem ipsum dolor sit amet</li>
+					</ul>
+				</div>
+			</div>
+			<div class="col-md-6 col-md-offset-3">
+				<button class="btn btn-lg mt-50 btn-book">check availability</button>
+			</div>
+		</div>
+		<div class="col-sm-6 img-con r0" style="background-image: url('assets/zenGardenFacade.jpg')">
+		</div>
+	</div>
+	<div class="row con" id="amen-main">
+		<div class="col-sm-6 img-con" style="background-image: url('assets/zenGardenFacade.jpg')">
+		</div>
+		<div class="col-sm-6 r0" style="padding: 50px; position: absolute;" id='amen-con'>
+			<strong><h3 class="mb-0 mt-0">AMENITIES</h3></strong>
+			<p class="mb-30">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+			<div class="col-md-6">
+				<div class="row">
+					<ul>
+						<li>Lorem ipsum dolor sit amet</li>
+						<li>Lorem ipsum dolor sit amet</li>
+						<li>Lorem ipsum dolor sit amet</li>
+						<li>Lorem ipsum dolor sit amet</li>
+						<li>Lorem ipsum dolor sit amet</li>
+						<li>Lorem ipsum dolor sit amet</li>
+						<li>Lorem ipsum dolor sit amet</li>
+						<li>Lorem ipsum dolor sit amet</li>
+					</ul>
+				</div>
+			</div>
+			<div class="col-md-6">
+				<div class="row">
+					<ul>
+						<li>Lorem ipsum dolor sit amet</li>
+						<li>Lorem ipsum dolor sit amet</li>
+						<li>Lorem ipsum dolor sit amet</li>
+						<li>Lorem ipsum dolor sit amet</li>
+						<li>Lorem ipsum dolor sit amet</li>
+						<li>Lorem ipsum dolor sit amet</li>
+						<li>Lorem ipsum dolor sit amet</li>
+						<li>Lorem ipsum dolor sit amet</li>
+					</ul>
+				</div>
+			</div>
+			<div class="col-md-6 col-md-offset-3">
+				<button class="btn btn-lg mt-50 btn-book">check availability</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript">
+	var amenHeight = document.getElementById('amen-con').clientHeight;
+	document.getElementById('amen-main').style.height = amenHeight + 'px';
+</script>

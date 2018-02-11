@@ -1,0 +1,88 @@
+<style type="text/css">
+	section.sub-top{
+		background-image: url('assets/event-banner.jpg');
+		background-position: 50%;
+	}
+
+	.item-con{
+		position: relative;
+		height: 355px;
+	}
+
+	.img-con{
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: cover;
+		position: absolute;
+		height: 100%;
+	}
+	.txt-con{
+		height: 100%;
+		position: absolute;
+	}
+
+	.r0{
+		right: 0;
+	}
+	.l0{
+		left: 0;
+	}
+	@media only screen and (max-width: 767px) {
+		.img-con,
+		.txt-con{
+			position: unset;
+		}
+		.item-con{
+			height: auto;
+		}
+		.img-con{
+			height: 355px;
+		}
+		.txt-con{
+			height: auto;
+			background-color: transparent;
+		}
+	}
+</style>
+
+<section class="sub-top banner">
+	<div class="col-md-6 col-md-offset-3 title text-center">
+		<h1>program and events</h1>
+	</div>
+</section>
+
+<div class="container main">
+	
+	<div class="col-md-12 mb-25 mt-25">
+		<div class="row item-con">
+			<div class="col-md-6 img-con l0" style="background-image: url('assets/events.jpeg')">
+			</div>
+			<div class="col-md-6 txt-con r0">
+				<strong><h3>LOREM IPSUM</h3></strong>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+				<p>Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+			</div>
+			<div class="clearfix"></div>
+		</div>
+		<div class="row item-con">
+			<div class="col-md-6 txt-con l0">
+				<strong><h3>LOREM IPSUM</h3></strong>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+				<p>Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+			</div>
+			<div class="col-md-6 img-con r0" style="background-image: url('assets/events.jpeg')">
+			</div>
+			<div class="clearfix"></div>
+		</div>
+		<div class="row item-con">
+			<div class="col-md-6 img-con l0" style="background-image: url('assets/events.jpeg')">
+			</div>
+			<div class="col-md-6 txt-con r0">
+				<strong><h3>LOREM IPSUM</h3></strong>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+				<p>Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+			</div>
+			<div class="clearfix"></div>
+		</div>
+	</div>
+</div>
