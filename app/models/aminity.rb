@@ -1,0 +1,2 @@
+class Aminity < ApplicationRecord
+end
