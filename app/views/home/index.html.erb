@@ -95,26 +95,24 @@
 		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
 	</div>
 	<div class="search-container">
-		<form method="post">
+		<form method="get" action="/booking/search">
 			<div class="form-group" style="margin: 0">
 				<div class="col-md-9 inputs">
 					<div class="col-md-4 inner-addon right-addon">
 						<i class="fa fa-calendar"></i>
-						<input type="text" class="form-control withdatepicker" placeholder="Check In Date" />
+						<input type="text" name="from" class="form-control withdatepicker" placeholder="Check In Date" />
 					</div>
 					<div class="col-md-4 inner-addon right-addon">
 						<i class="fa fa-calendar"></i>
-						<input type="text" class="form-control withdatepicker" placeholder="Check Out Date" />
+						<input type="text" name="to" class="form-control withdatepicker" placeholder="Check Out Date" />
 					</div>
 					<div class="col-md-4 inner-addon right-addon">
-						<select class="form-control">
-							<option>Choose Room</option>
-						</select>
+						<%= select("", "room_id", Room.order(:name).collect { |r| [r.name, r.id] }, { include_blank: "Choose Room" }, :class => 'form-control') %>
 					</div>
 				</div>
 				<div class="col-md-3">
 					<div class="row">
-						<button class="btn btn-lg">BOOK NOW</button>
+						<button type="submit" class="btn btn-lg">CHECK AVAILABILITY</button>
 					</div>
 				</div>
 				<div class="clearfix"></div>
@@ -139,7 +137,8 @@
 		$(".withdatepicker").datepicker({
 			autoclose: true,
 			todayHighlight: true,
-			format: 'yyyy-mm-dd'
+			format: 'yyyy-mm-dd',
+			startDate: new Date()
 		});
 	});
 </script>

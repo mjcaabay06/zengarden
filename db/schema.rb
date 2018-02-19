@@ -10,9 +10,94 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 20180217191501) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "aminities", force: :cascade do |t|
+    t.string "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "booking_statuses", force: :cascade do |t|
+    t.string "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "bookings", force: :cascade do |t|
+    t.date "checked_in"
+    t.date "checked_out"
+    t.bigint "client_id"
+    t.integer "guest"
+    t.float "total_amount"
+    t.bigint "booking_status_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["booking_status_id"], name: "index_bookings_on_booking_status_id"
+    t.index ["client_id"], name: "index_bookings_on_client_id"
+  end
+
+  create_table "clients", force: :cascade do |t|
+    t.string "first_name"
+    t.string "middle_name"
+    t.string "last_name"
+    t.string "email_address"
+    t.string "contact_number"
+    t.text "address"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "events", force: :cascade do |t|
+    t.string "name"
+    t.string "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "inquiries", force: :cascade do |t|
+    t.bigint "client_id"
+    t.date "event_date"
+    t.bigint "event_id"
+    t.text "message"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["client_id"], name: "index_inquiries_on_client_id"
+    t.index ["event_id"], name: "index_inquiries_on_event_id"
+  end
+
+  create_table "room_aminities", force: :cascade do |t|
+    t.bigint "room_id"
+    t.bigint "aminity_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["aminity_id"], name: "index_room_aminities_on_aminity_id"
+    t.index ["room_id"], name: "index_room_aminities_on_room_id"
+  end
+
+  create_table "rooms", force: :cascade do |t|
+    t.string "name"
+    t.float "rate"
+    t.integer "room_number"
+    t.integer "accomodates"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "description"
+  end
+
+  create_table "statuses", force: :cascade do |t|
+    t.string "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_foreign_key "bookings", "booking_statuses"
+  add_foreign_key "bookings", "clients"
+  add_foreign_key "inquiries", "clients"
+  add_foreign_key "inquiries", "events"
+  add_foreign_key "room_aminities", "aminities"
+  add_foreign_key "room_aminities", "rooms"
 end
