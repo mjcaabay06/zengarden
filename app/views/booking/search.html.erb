@@ -57,11 +57,14 @@
 					<div class="col-md-9 inputs">
 						<div class="col-md-4 inner-addon right-addon">
 							<i class="fa fa-calendar"></i>
-							<input type="text" class="form-control withdatepicker" placeholder="Check In Date" />
+							<input type="text" class="form-control withdatepicker" placeholder="Check In Date" value="<%= params[:from] unless params[:from].blank? %>" />
 						</div>
 						<div class="col-md-4 inner-addon right-addon">
 							<i class="fa fa-calendar"></i>
-							<input type="text" class="form-control withdatepicker" placeholder="Check Out Date" />
+							<input type="text" class="form-control withdatepicker" placeholder="Check Out Date" value="<%= params[:to] unless params[:to].blank? %>" />
+						</div>
+						<div class="col-md-4 inner-addon right-addon">
+							<%= select("", "room_id", Room.order(:name).collect { |r| [r.name, r.id] }, { include_blank: "Choose Room", :selected => params[:room_id] }, :class => 'form-control') %>
 						</div>
 					</div>
 					<div class="col-md-3">
@@ -153,3 +156,14 @@
 		</div>
 	</div>
 </div>
+
+<script type="text/javascript">
+	$(document).ready(function(){
+		$(".withdatepicker").datepicker({
+			autoclose: true,
+			todayHighlight: true,
+			format: 'yyyy-mm-dd',
+			startDate: new Date()
+		});
+	});
+</script>
