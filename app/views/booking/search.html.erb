@@ -42,7 +42,7 @@
 	}
 </style>
 
-<section class="sub-top banner">
+<section class="sub-top banner hidden">
 	<div class="col-md-6 col-md-offset-3 title text-center">
 		<h1>available rooms</h1>
 		<p>Go in for a truly refreshing experience by lounging in our Japanese-inspired, nature-themed modern rooms that are perfect for solo, twin or group accommodation.</p>
@@ -51,17 +51,18 @@
 
 <div class="container main rooms">
 	<div class="col-md-12 mb-25 mt-25">
+		<div class="col-sm-12 text-center mb-20"><h1>AVAILABLE ROOMS</h1></div>
 		<div class="row">
-			<form method="post" class="form-horizontal tb-form">
+			<form method="get" action="" class="form-horizontal tb-form">
 				<div class="form-group" style="margin: 0">
 					<div class="col-md-9 inputs">
 						<div class="col-md-4 inner-addon right-addon">
 							<i class="fa fa-calendar"></i>
-							<input type="text" class="form-control withdatepicker" placeholder="Check In Date" value="<%= params[:from] unless params[:from].blank? %>" />
+							<input name="from" type="text" class="form-control withdatepicker" placeholder="Check In Date" value="<%= params[:from] unless params[:from].blank? %>" />
 						</div>
 						<div class="col-md-4 inner-addon right-addon">
 							<i class="fa fa-calendar"></i>
-							<input type="text" class="form-control withdatepicker" placeholder="Check Out Date" value="<%= params[:to] unless params[:to].blank? %>" />
+							<input name="to" type="text" class="form-control withdatepicker" placeholder="Check Out Date" value="<%= params[:to] unless params[:to].blank? %>" />
 						</div>
 						<div class="col-md-4 inner-addon right-addon">
 							<%= select("", "room_id", Room.order(:name).collect { |r| [r.name, r.id] }, { include_blank: "Choose Room", :selected => params[:room_id] }, :class => 'form-control') %>
