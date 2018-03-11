@@ -1,5 +1,5 @@
 BookingStatus.create!([
-	{ description: 'On Que' },
+	{ description: 'Pending' },
 	{ description: 'Checked In' },
 	{ description: 'Checked Out' },
 	{ description: 'Cancelled' },
