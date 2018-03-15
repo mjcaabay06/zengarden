@@ -1,0 +1,153 @@
+<style type="text/css">
+	section.sub-top{
+		background-image: url('assets/zenGardenImage2.jpg');
+	}
+	section.sub-top .title{
+		margin-bottom: 60px;
+	}
+
+	/*.slider .main{
+		height: 325px;
+	}
+	.slider .img{
+		height: 100px;
+	}
+	.slider .main,
+	.slider .img{
+		background-size: cover;
+		background-position: bottom;
+		background-repeat: no-repeat;
+	}*/
+
+	.tb-con-img{
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: cover;
+		height: 355px;
+	}
+	.tb-con-desc{
+		padding-bottom: 14px;
+	}
+	.tb-con-desc h4,
+	.tb-con-desc p{
+		margin: 0;
+	}
+	.tb-con-desc p{
+		white-space: nowrap;
+		overflow: hidden;
+	}
+	.tb-con-desc h4{
+		font-weight: bold;
+	}
+	a.btn-view{
+		font-size: 40px;
+		padding-top: 5px !important;
+		padding-bottom: 5px !important;
+	}
+
+	.inner-addon{
+		position: relative;
+		padding: 15px;
+	}
+	.inner-addon .fa{
+		position: absolute;
+		padding: 6px 10px;
+		pointer-events: none;
+	}
+	.right-addon .fa{
+		right: 10px;
+		font-size: 20px;
+	}
+	.right-addon input{
+		padding-right: 30px;
+	}
+	@media only screen and (max-width: 767px) {
+		.pr-15{
+			padding-right: 0 !important;
+		}
+		.rooms ul{
+			padding-left: 0 !important;
+		}
+		section.sub-top{
+			padding: 0;
+		}
+		section.sub-top .title{
+			margin-top: 75px;
+			margin-bottom: 25px;
+		}
+	}
+	@media only screen and (min-width: 768px) and (max-width: 972px) {
+		section.sub-top > div{
+			padding-bottom: 0;
+		}
+	}
+</style>
+
+<section class="sub-top banner">
+	<div class="col-md-6 col-md-offset-3 title text-center">
+		<h1>room</h1>
+		<p>Go in for a truly refreshing experience by lounging in our Japanese-inspired, nature-themed modern rooms that are perfect for solo, twin or group accommodation.</p>
+	</div>
+
+	<div class="col-sm-12">
+		<div class="row">
+			<form method="get" action="/booking/search" class="form-horizontal tb-form">
+				<div class="form-group" style="margin: 0">
+					<div class="col-md-9 inputs">
+						<div class="col-md-4 inner-addon right-addon">
+							<i class="fa fa-calendar"></i>
+							<input name="from" type="text" class="form-control withdatepicker" placeholder="Check In Date" />
+						</div>
+						<div class="col-md-4 inner-addon right-addon">
+							<i class="fa fa-calendar"></i>
+							<input name="to" type="text" class="form-control withdatepicker" placeholder="Check Out Date" />
+						</div>
+						<div class="col-md-4 inner-addon right-addon">
+							<%= select("", "room_id", Room.order(:name).collect { |r| [r.name, r.id] }, { include_blank: "Choose Room" }, :class => 'form-control') %>
+						</div>
+					</div>
+					<div class="col-md-3">
+						<div class="row">
+							<button class="btn btn-lg btn-book">CHECK AVAILABILITY</button>
+						</div>
+					</div>
+					<div class="clearfix"></div>
+				</div>
+			</form>
+		</div>
+	</div>
+</section>
+
+<div class="container main rooms">
+	<div class="col-md-12 mb-25 mt-25">
+		<div class="row">
+			<% Room.all.each do |room| %>
+				<div class="col-md-6 col-sm-12 mb-30">
+					<div class="col-sm-12 tb-con-img" style="background-image: url('assets/events.jpeg')"></div>
+					<div class="col-sm-10 pt-15 tb-con-desc">
+						<h4><%= room.name %></h4>
+						<p><%= room.description %></p>
+					</div>
+					<div class="col-sm-2">
+						<div class="row">
+							<a href="/rooms/<%= room.url %>" class="btn btn-view btn-book">
+								<i class="fa fa-eye" aria-hidden="true"></i>
+							</a>
+						</div>
+					</div>
+				</div>
+			<% end %>
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript">
+	$(document).ready(function(){
+		$(".withdatepicker").datepicker({
+			autoclose: true,
+			todayHighlight: true,
+			format: 'yyyy-mm-dd',
+			startDate: new Date()
+		});
+	});
+</script>
