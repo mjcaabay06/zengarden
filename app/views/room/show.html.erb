@@ -1,0 +1,144 @@
+<style type="text/css">
+	section.sub-top{
+		background-image: url('/assets/zenGardenImage2.jpg');
+	}
+	.slider .main{
+		height: 450px;
+	}
+	.slider .img{
+		height: 160px;
+	}
+	.slider .main,
+	.slider .img{
+		background-size: cover;
+		background-position: bottom;
+		background-repeat: no-repeat;
+	}
+
+	.inner-addon{
+		position: relative;
+		padding: 15px;
+	}
+	.inner-addon .fa{
+		position: absolute;
+		padding: 6px 10px;
+		pointer-events: none;
+	}
+	.right-addon .fa{
+		right: 10px;
+		font-size: 20px;
+	}
+	.right-addon input{
+		padding-right: 30px;
+	}
+
+	span.price{
+		font-size: 30px;
+	}
+
+	@media only screen and (max-width: 767px) {
+		.pr-15{
+			padding-right: 0 !important;
+		}
+		.rooms ul{
+			padding-left: 0 !important;
+		}
+	}
+</style>
+
+<section class="sub-top banner">
+	<div class="col-md-8 col-md-offset-2 title text-center">
+		<h1><%= @room.name %></h1>
+		<p><%= @room.description %></p>
+	</div>
+</section>
+
+<div class="container main rooms">
+	<div class="col-md-12 mb-25">
+		<div class="row">
+			<form method="get" action="/booking/search" class="form-horizontal tb-form">
+				<input type="hidden" name="room_id" value="<%= @room.id %>">
+				<div class="form-group" style="margin: 0">
+					<div class="col-md-9 inputs">
+						<div class="col-md-6 inner-addon right-addon">
+							<i class="fa fa-calendar"></i>
+							<input name="from" type="text" class="form-control withdatepicker" placeholder="Check In Date" value="<%= params[:from] unless params[:from].blank? %>" />
+						</div>
+						<div class="col-md-6 inner-addon right-addon">
+							<i class="fa fa-calendar"></i>
+							<input name="to" type="text" class="form-control withdatepicker" placeholder="Check Out Date" value="<%= params[:to] unless params[:to].blank? %>" />
+						</div>
+					</div>
+					<div class="col-md-3">
+						<div class="row">
+							<button class="btn btn-lg btn-book">check availability</button>
+						</div>
+					</div>
+					<div class="clearfix"></div>
+				</div>
+			</form>
+		</div>
+	</div>
+	<div class="col-md-12 mb-25 mt-25">
+		<div class="row">
+			
+			
+			<div class="col-md-8">
+				<div class="slider">
+					<div class="col-xs-12 main mb-10" style="background-image: url('/assets/zenGardenRoom1.jpg');"></div>
+					<div class="col-xs-4 img" style="background-image: url('/assets/zenGardenRoom1.jpg');"></div>
+					<div class="col-xs-4 img" style="background-image: url('/assets/zenGardenRoom3.jpg');"></div>
+					<div class="col-xs-4 img" style="background-image: url('/assets/zenGardenRoom2.jpg');"></div>
+				</div>
+				<div class="clearfix"></div>
+			</div>
+			<div class="col-md-4">
+				<div class="pr-15">
+					<strong><h3><%= @room.name %></h3></strong>
+					<hr/>
+					<p><%= @room.description %></p>
+				</div>
+				<div class="pr-15 mt-25">
+					<% RoomAminity.where(room_id: @room.id).each do |ra| %>
+						<div class="col-xs-4">
+							<span>&bullet;&nbsp;<%= ra.aminity.description %></span>
+						</div>
+					<% end %>
+					<div class="clearfix"></div>
+				</div>
+				<hr/>
+
+				<div class="col-md-6">
+					<span><strong>Max. Guests:&emsp;<%= @room.accomodates %></strong></span>
+				</div>
+				<div class="col-md-6">
+					<span><strong>No. of Rooms:&emsp;<%= @room.room_number %></strong></span>
+				</div>
+				<div class="clearfix"></div>
+				<hr/>
+
+				<div class="col-md-12">
+					<span class="price">₱ <%= @room.rate.to_i %></span>
+				</div>
+				
+				<div class="row hidden">
+					<div class="col-md-12">
+						<button class="btn btn-lg btn-book">check availability</button>
+					</div>
+				</div>
+			</div>
+			
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript">
+	$(document).ready(function(){
+		$(".withdatepicker").datepicker({
+			autoclose: true,
+			todayHighlight: true,
+			format: 'yyyy-mm-dd',
+			startDate: new Date()
+		});
+	});
+</script>
