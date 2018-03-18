@@ -6,7 +6,7 @@ class InquiryController < ApplicationController
 
 	def create
 		respond_to do |format|
-
+			params[:client_status_id] = 2
 			@client = Client.new(client_params)
 			if @client.save
 				params[:client_id] = @client.id
@@ -19,15 +19,12 @@ class InquiryController < ApplicationController
 			else
 				format.html { redirect_to '/inquiry', danger: "There was and error sending your request." }
 			end
-
-		
-			
 		end
 	end
 
 	private
 		def client_params
-			params.permit(:first_name, :middle_name, :last_name, :email_address, :contact_number, :address)
+			params.permit(:first_name, :middle_name, :last_name, :email_address, :contact_number, :address, :client_status_id)
 		end
 
 		def inquiry_params

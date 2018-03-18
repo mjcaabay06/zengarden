@@ -1,5 +1,5 @@
 <% url_trim = request.fullpath.split('/').blank? ? '' : request.fullpath.split('/')[request.fullpath.split('/').count - 1].split('?')[0]
-  defaultbg = ['contact-us','search']
+  defaultbg = ['contact-us','search','thank-you']
 %>
 <%# navigation styled for Bootstrap 3.0 %>
 <nav class="navbar navbar-inverse <%= 'default-bg' if defaultbg.include?(url_trim) %>">

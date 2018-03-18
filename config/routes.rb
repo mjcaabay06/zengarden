@@ -26,7 +26,8 @@ Rails.application.routes.draw do
   get 'booking/index'
   get '/booking/search' => 'booking#search'
   get '/booking/new' => 'booking#new'
-  post '/booking/create' => 'booking#create'
+  post '/booking/new' => 'booking#create'
+  get '/booking/thank-you' => 'booking#thank_you'
 
   resources :inquiry, path: 'inquiry'
 
