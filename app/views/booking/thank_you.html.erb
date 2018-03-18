@@ -1,0 +1,45 @@
+<style type="text/css">
+	section.sub-top{
+		background-image: url('/assets/zenGardenImage2.jpg');
+	}
+
+	.inquiry-form{
+		color: #fff;
+		padding: 40px;
+	}
+
+	textarea.form-control{
+		height: 150px;
+	}
+	@media only screen and (max-width: 767px) {
+		form{
+			padding: 15px;
+		}
+		.form-group.fullname{
+			margin-bottom: 0;
+		}
+		.form-group.fullname input{
+			margin-bottom: 15px;
+		}
+		.add-margin{
+			margin-bottom: 15px;
+		}
+	}
+</style>
+
+<section class="sub-top banner hidden">
+	<div class="col-md-6 col-md-offset-3 title text-center">
+		<h1></h1>
+		<p></p>
+	</div>
+</section>
+
+<div class="container main">
+	
+	<div class="col-md-10 col-md-offset-1 mb-25 mt-25">
+		<div class="row">
+			<%= render 'layouts/messages' %>
+			THANK YOU!
+		</div>
+	</div>
+</div>

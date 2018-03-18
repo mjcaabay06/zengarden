@@ -133,7 +133,7 @@
 								</div>
 							</div>
 							<div class="col-md-12 mt-30">
-								<button class="btn btn-lg btn-book" onclick="book(<%= room.id %>)">book now</button>
+								<button class="btn btn-lg btn-book book-now" data-value="<%= room.id %>">book now</button>
 							</div>
 						</div>
 					</div>
@@ -146,6 +146,12 @@
 
 	
 </div>
+<form class="hidden" method="get" action="/booking/new" id="book-now">
+	<input name="from" type="hidden" value="<%= params[:from] unless params[:from].blank? %>" />
+	<input name="to" type="hidden" value="<%= params[:to] unless params[:to].blank? %>" />
+	<input type="hidden" name="room_id">
+	<input type="hidden" name="guest">
+</form>
 
 <script type="text/javascript">
 	$(document).ready(function(){
@@ -154,6 +160,13 @@
 			todayHighlight: true,
 			format: 'yyyy-mm-dd',
 			startDate: new Date()
+		});
+
+		$(".book-now").on('click', function(){
+			var id = $(this).data('value');
+			$('input[name=room_id]').val(id);
+			$('input[name=guest]').val($('#guest' + id).val());
+			$("#book-now").submit();
 		});
 	});
 </script>

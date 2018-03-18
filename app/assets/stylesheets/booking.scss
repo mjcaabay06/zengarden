@@ -1,3 +1,59 @@
 // Place all the styles related to the booking controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+button.btn-book:hover,
+button.btn-book:focus{
+	background-color: #90b701 !important;
+}
+button.btn-back{
+	background-color: #252120;
+}
+button.btn-back:hover,
+button.btn-back:focus{
+	background-color: #332d2c !important;
+}
+
+body.colorscheme-1 .booking-details span.room,
+body.colorscheme-1 .booking-details span.price{
+	font-size: 22px;
+}
+
+body.colorscheme-1 .booking-details .pull-right span{
+	font-weight: bold;
+}
+
+/* COLORSCHEME1 */
+body.colorscheme-1 .inquiry-form,
+body.colorscheme-1 .booking-details{
+	background-color: #3d2b29;
+}
+
+body.colorscheme-1 .booking-details{
+	padding: 40px;
+}
+
+body.colorscheme-1 .booking-details span{
+	color: #ffffff;
+	font-size: 16px;
+}
+
+/* COLORSCHEME2 */
+body.colorscheme-2 .inquiry-form,
+body.colorscheme-2 .booking-details{
+	background-color: #204813;
+}
+
+body.colorscheme-2 .booking-details{
+	padding: 40px;
+}
+
+/* COLORSCHEME3 */
+body.colorscheme-3 .inquiry-form,
+body.colorscheme-3 .booking-details{
+	background-color: #411c14;
+}
+
+body.colorscheme-3 .booking-details{
+	padding: 40px;
+}
