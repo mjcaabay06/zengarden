@@ -69,7 +69,7 @@
 							<input name="to" type="text" class="form-control withdatepicker" placeholder="Check Out Date" value="<%= params[:to] unless params[:to].blank? %>" />
 						</div>
 						<div class="col-md-4 inner-addon right-addon">
-							<%= select("", "room_id", Room.order(:name).collect { |r| [r.name, r.id] }, { include_blank: "Choose Room", :selected => params[:room_id] }, :class => 'form-control') %>
+							<%= select("", "room_id", Room.all.collect { |r| [r.name, r.id] }, { include_blank: "Choose Room", :selected => params[:room_id] }, :class => 'form-control') %>
 						</div>
 					</div>
 					<div class="col-md-3">

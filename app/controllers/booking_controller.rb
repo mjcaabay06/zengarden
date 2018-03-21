@@ -5,8 +5,20 @@ class BookingController < ApplicationController
 	end
 
 	def search
-		roomId = params[:room_id].blank? ? '1=1' : "id = #{params[:room_id]}"
+		roomId = params[:room_id].blank? ? "1=1" : "room_id = #{params[:room_id]}"
+		
+		bookId = []
+		book = Booking.select('room_id, count(room_id)').joins(:room).where("((:from > checked_in and :from < checked_out) or (:to > checked_in and :to < checked_out)) and #{roomId}",{ from: params[:from], to: params[:to] }).group(:room_id, :room_number).having("count(room_id) = room_number")
+		book.each do |b|
+			bookId << b.room_id
+		end
+
+		roomId = params[:room_id].blank? ? "1=1" : "id = #{params[:room_id]}"
 		@room = Room.where(roomId)
+
+		unless bookId.blank?
+			@room = @room.where("id not in (?)", bookId)
+		end
 	end
 
 	def new
