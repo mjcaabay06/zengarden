@@ -112,16 +112,36 @@
 					</div>
 				</div>
 				<div class="form-group">
+					<div class="col-sm-12 text-center">
+						<input type="checkbox" id="check-tc">
+						<label for="check-tc" style="font-weight: normal">I hereby agree to the <a href="#modalTermsConditions" data-toggle="modal">Terms and Conditions</a>.</label>
+					</div>
+				</div>
+				<div class="form-group">
 					<div class="col-md-3 col-xs-12 pull-left">
 						<button type="button" class="btn btn-lg btn-back">Back</button>
 					</div>
 					<div class="col-md-3 col-xs-12 pull-right">
-						<button type="submit" class="btn btn-lg btn-book">Book Now</button>
+						<button type="submit" class="btn btn-lg btn-book" id="btn-book" disabled="">Book Now</button>
 					</div>
 					<div class="clearfix"></div>
 				</div>
 				<div class="clearfix"></div>
 			</form>
+		</div>
+	</div>
+</div>
+
+<div class="modal" id="modalTermsConditions" role="dialog" aria-labelledby="titleModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+				<h4 class="modal-title text-center" id="titleModalLabel">Terms and Conditions</h4>
+			</div>
+			<div class="modal-body">
+				<%= render "terms-and-conditions" %>
+			</div>
 		</div>
 	</div>
 </div>
@@ -133,6 +153,14 @@
 			todayHighlight: true,
 			format: 'yyyy-mm-dd',
 			startDate: new Date()
+		});
+
+		$("#check-tc").on('click', function(){
+			if ( $(this).is(":checked") ) {
+				$("#btn-book").removeAttr('disabled');
+			} else {
+				$("#btn-book").attr('disabled','');
+			}
 		});
 	});
 </script>
