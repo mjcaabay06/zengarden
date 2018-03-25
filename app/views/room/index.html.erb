@@ -2,9 +2,6 @@
 	section.sub-top{
 		background-image: url('assets/zenGardenImage2.jpg');
 	}
-	section.sub-top .title{
-		margin-bottom: 60px;
-	}
 
 	/*.slider .main{
 		height: 325px;
@@ -86,39 +83,42 @@
 <section class="sub-top banner">
 	<div class="col-md-6 col-md-offset-3 title text-center">
 		<h1>room</h1>
-		<p>Go in for a truly refreshing experience by lounging in our Japanese-inspired, nature-themed modern rooms that are perfect for solo, twin or group accommodation.</p>
-	</div>
-
-	<div class="col-sm-12">
-		<div class="row">
-			<form method="get" action="/booking/search" class="form-horizontal tb-form">
-				<div class="form-group" style="margin: 0">
-					<div class="col-md-9 inputs">
-						<div class="col-md-4 inner-addon right-addon">
-							<i class="fa fa-calendar"></i>
-							<input name="from" type="text" class="form-control withdatepicker" placeholder="Check In Date" />
-						</div>
-						<div class="col-md-4 inner-addon right-addon">
-							<i class="fa fa-calendar"></i>
-							<input name="to" type="text" class="form-control withdatepicker" placeholder="Check Out Date" />
-						</div>
-						<div class="col-md-4 inner-addon right-addon">
-							<%= select("", "room_id", Room.order(:name).collect { |r| [r.name, r.id] }, { include_blank: "Choose Room" }, :class => 'form-control') %>
-						</div>
-					</div>
-					<div class="col-md-3">
-						<div class="row">
-							<button class="btn btn-lg btn-book">CHECK AVAILABILITY</button>
-						</div>
-					</div>
-					<div class="clearfix"></div>
-				</div>
-			</form>
-		</div>
 	</div>
 </section>
+<div class="col-sm-12 mb-40">
+	<div class="row">
+		<form method="get" action="/booking/search" class="form-horizontal tb-form">
+			<div class="form-group" style="margin: 0">
+				<div class="col-md-9 inputs">
+					<div class="col-md-4 inner-addon right-addon">
+						<i class="fa fa-calendar"></i>
+						<input name="from" type="text" class="form-control withdatepicker" placeholder="Check In Date" />
+					</div>
+					<div class="col-md-4 inner-addon right-addon">
+						<i class="fa fa-calendar"></i>
+						<input name="to" type="text" class="form-control withdatepicker" placeholder="Check Out Date" />
+					</div>
+					<div class="col-md-4 inner-addon right-addon">
+						<%= select("", "room_id", Room.order(:name).collect { |r| [r.name, r.id] }, { include_blank: "Choose Room" }, :class => 'form-control') %>
+					</div>
+				</div>
+				<div class="col-md-3">
+					<div class="row">
+						<button class="btn btn-lg btn-book">CHECK AVAILABILITY</button>
+					</div>
+				</div>
+				<div class="clearfix"></div>
+			</div>
+		</form>
+	</div>
+</div>
 
 <div class="container main rooms">
+	<div class="col-md-12 mb-25 mt-25">
+		<div class="row text-center">
+			<p>Experience our Japanese-inspired modern rooms designed for gratifying comfort.</p>
+		</div>
+	</div>
 	<div class="col-md-12 mb-25 mt-25">
 		<div class="row">
 			<% Room.all.each do |room| %>
