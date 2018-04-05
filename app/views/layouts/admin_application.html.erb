@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => 'reload' %>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>ZenGarden [Admin]</title>
+		<%= csrf_meta_tags %>
+		<%= javascript_include_tag 'application', 'data-turbolinks-track' => 'reload' %>
+		<%= yield :header %>
+		<link rel="stylesheet" media="all" href="/assets/admin/application.css" />
+		<link rel="stylesheet" media="all" href="/assets/<%= params[:controller] %>.css" />
+	</head>
+	<body>
+		<header>
+			<%= render 'layouts/admin_header' %>
+		</header>
+		<div class="container-fluid content">
+			<%= yield %>
+		</div>
+		<div id="loader-wrapper">
+			<div id="loader"></div>
+		</div>
+	</body>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$(".withdatepicker").datepicker({
+				autoclose: true,
+				todayHighlight: true,
+				format: 'mm/dd/yyyy',
+				endDate: new Date()
+			});
+		});
+	</script>
+</html>

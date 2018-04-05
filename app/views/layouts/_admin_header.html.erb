@@ -1,0 +1,40 @@
+<nav class="navbar navbar-inverse navbar-fixed-top admin">
+	<div class="container-fluid">
+		<div class="col-sm-12">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>                        
+				</button>
+				<!-- <a class="navbar-brand" href="#">Logo</a> -->
+				<a href="#" class="navbar-brand">
+					<img class="logo" src="/assets/zenGardenLogo.png" />
+				</a>
+			</div>
+			<div class="collapse navbar-collapse" id="myNavbar">
+				<ul class="nav navbar-nav">
+					<% AccessCategory.all.order(:description).each do |ac| %>
+						<% access = Access.where("access_category_id = ?", ac.id) %>
+						<li class="dropdown">
+							<a class="dropdown-toggle" data-toggle="dropdown" href="#"><%= ac.description %> <% if access.present? %><span class="caret"></span><% end %></a>
+							<% unless access.blank? %>
+								<ul class="dropdown-menu">
+									<% access.each do |a| %>
+										<li><a href="<%= a.url %>"><%= a.description %></a></li>
+									<% end %>
+								</ul>
+							<% end %>
+						</li>
+					<% end %>
+				</ul>
+				<ul class="nav navbar-nav navbar-right">
+					<li>
+						<a href="/admin/logout"><span class="glyphicon glyphicon-log-in"></span> Logout</a>
+					</li>
+				</ul>
+			</div>
+			<div class="clearfix"></div>
+		</div>
+	</div>
+</nav>

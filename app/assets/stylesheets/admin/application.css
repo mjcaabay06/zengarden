@@ -1,0 +1,84 @@
+header {
+	height: 50px
+}
+
+header > .navbar.admin{
+	border-bottom: 5px solid rgba(0, 0, 0, 0.3);
+}
+
+header > .navbar.admin,
+header > .navbar.admin .dropdown-menu{
+	background-color: #3d2b29;
+}
+
+header > .navbar.admin .dropdown-menu{
+	margin-top: -1px;
+	border: 0;
+	padding: 0;
+	border-radius: 0;
+}
+
+header > .navbar.admin .dropdown-menu a{
+	padding: 12px 15px;
+}
+
+header > .navbar.admin img.logo{
+	width: 50px;
+	margin-right: 15px;
+}
+
+header > .navbar.admin #myNavbar a{
+	color: #fff;
+}
+
+header > .navbar.admin #myNavbar a:hover,
+header > .navbar.admin #myNavbar a:focus{
+	background-color: #2e201f;
+}
+
+.page-header{
+	padding-bottom: 0;
+	border-bottom: 2px solid #ddd;
+}
+.page-header > h1{
+	font-size: 20px;
+	font-weight: bolder;
+	text-transform: uppercase;
+	color: #3d2b29;
+}
+
+input.form-control{
+	border: 1px solid #ccc;
+}
+
+.btn-primary{
+	border-radius: 0;
+	background-color: #3d2b29;
+	border-color: #3d2b29;
+}
+.btn-primary:hover,
+.btn-primary:focus{
+	background-color: #2e201f;
+	border-color: #2e201f;
+}
+
+.btn-default{
+	border-radius: 0;
+	background-color: #e7e7e7;
+	border-color: #dadada;
+	color: #333;
+}
+.btn-default:hover,
+.btn-default:focus,
+.nav-tabs > li > a:hover,
+.nav-tabs > li > a:focus{
+	background-color: #d3d3d3;
+	border-color: #bbb;
+}
+
+.nav-tabs > li > a{
+	border-radius: 0;
+	color: #333;
+	background-color: #e7e7e7;
+	border-color: #dadada;
+}

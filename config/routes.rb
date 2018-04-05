@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   get 'room/index'
 
   # get 'inquiry/index'
@@ -30,6 +31,13 @@ Rails.application.routes.draw do
   get '/booking/thank-you' => 'booking#thank_you'
 
   resources :inquiry, path: 'inquiry'
+
+  namespace :admin do
+    root "home#index"
+    # get 'user/index'
+
+    resources :reservation, path: 'reservations'
+  end
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

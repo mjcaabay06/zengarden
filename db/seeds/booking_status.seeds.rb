@@ -3,6 +3,7 @@ BookingStatus.create!([
 	{ description: 'Checked In' },
 	{ description: 'Checked Out' },
 	{ description: 'Cancelled' },
-	{ description: 'Reserve' },
+	{ description: 'Reserved' },
 	{ description: 'Inquire' },
+	{ description: 'Paid' },
 ])
