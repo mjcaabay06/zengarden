@@ -10,10 +10,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180318125429) do
+ActiveRecord::Schema.define(version: 20180404152237) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "access_categories", force: :cascade do |t|
+    t.string "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "accesses", force: :cascade do |t|
+    t.bigint "access_category_id"
+    t.string "description"
+    t.string "url"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["access_category_id"], name: "index_accesses_on_access_category_id"
+  end
 
   create_table "aminities", force: :cascade do |t|
     t.string "description"
@@ -58,6 +73,7 @@ ActiveRecord::Schema.define(version: 20180318125429) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "client_status_id"
+    t.text "sid"
     t.index ["client_status_id"], name: "index_clients_on_client_status_id"
   end
 
@@ -105,6 +121,7 @@ ActiveRecord::Schema.define(version: 20180318125429) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "accesses", "access_categories"
   add_foreign_key "bookings", "booking_statuses"
   add_foreign_key "bookings", "clients"
   add_foreign_key "bookings", "rooms"
