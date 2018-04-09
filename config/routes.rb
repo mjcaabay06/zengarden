@@ -40,6 +40,8 @@ Rails.application.routes.draw do
     # get 'user/index'
 
     resources :reservation, path: 'reservations'
+    post '/reservations/update-status' => 'reservation#update_status'
+
     resources :inquiry, path: 'inquiries'
   end
 
