@@ -143,3 +143,9 @@ input.form-control{
   background: #6aa6ed;
   padding: 0.1em 0.25em;
 }
+
+.pd-cell-control{
+  width: 1px;
+  white-space: nowrap;
+  background-color: #ddd !important;
+}

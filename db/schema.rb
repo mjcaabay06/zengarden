@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180405134911) do
+ActiveRecord::Schema.define(version: 20180409075953) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -91,8 +91,10 @@ ActiveRecord::Schema.define(version: 20180405134911) do
     t.text "message"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "status_id"
     t.index ["client_id"], name: "index_inquiries_on_client_id"
     t.index ["event_id"], name: "index_inquiries_on_event_id"
+    t.index ["status_id"], name: "index_inquiries_on_status_id"
   end
 
   create_table "room_aminities", force: :cascade do |t|
@@ -155,6 +157,7 @@ ActiveRecord::Schema.define(version: 20180405134911) do
   add_foreign_key "clients", "client_statuses"
   add_foreign_key "inquiries", "clients"
   add_foreign_key "inquiries", "events"
+  add_foreign_key "inquiries", "statuses"
   add_foreign_key "room_aminities", "aminities"
   add_foreign_key "room_aminities", "rooms"
   add_foreign_key "user_role_accesses", "accesses"
