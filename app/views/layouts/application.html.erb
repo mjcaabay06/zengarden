@@ -8,6 +8,7 @@
         <%= javascript_include_tag 'application', 'data-turbolinks-track' => 'reload' %>
         <%= csrf_meta_tags %>
         <%= yield :header %>
+        <link rel="stylesheet" media="all" href="/assets/<%= params[:controller] %>.css" />
 	</head>
 	<body class="colorscheme-1">
 		<header>
@@ -23,7 +24,7 @@
 						<div class="row">
 							<div class="col-md-12">
 								<div class="row">
-									<a href="/"><img src="/assets/zenGardenLogo.png" /></a>
+									<a href="/"><img src="https://s3-ap-northeast-1.amazonaws.com/zengardenph/zenGardenLogo.png" /></a>
 								</div>
 							</div>
 							<div class="col-md-12 social">
@@ -48,37 +49,39 @@
 					<div class="col-sm-6">
 						<div class="row">
 							<div class="col-md-6">
-								<h4>LOREM IPSUM</h4>
 								<ul class="nav flex-column">
 									<li class="nav-item">
-										<a href="#" class="nav-link">ABOUT US</a>
+										<a href="/gallery" class="nav-link">GALLERY</a>
 									</li>
 									<li class="nav-item">
-										<a href="#" class="nav-link">GALLERY</a>
+										<a href="/rooms" class="nav-link">ROOM</a>
 									</li>
 									<li class="nav-item">
-										<a href="#" class="nav-link">ROOM PACKAGES</a>
+										<a href="/amenities" class="nav-link">AMENITIES</a>
 									</li>
 									<li class="nav-item">
-										<a href="#" class="nav-link">PROGRAM AND EVENTS</a>
+										<a href="/team-building" class="nav-link">TEAM BUILDING</a>
 									</li>
 									<li class="nav-item">
-										<a href="#" class="nav-link">INQUIRY</a>
+										<a href="/program-and-events" class="nav-link">EVENTS</a>
 									</li>
 									<li class="nav-item">
-										<a href="#" class="nav-link">CONTACT US</a>
+										<a href="/inquiry" class="nav-link">INQUIRY</a>
+									</li>
+									<li class="nav-item">
+										<a href="/contact-us" class="nav-link">CONTACT US</a>
 									</li>
 
 								</ul>
 							</div>
 							<div class="col-md-6">
 								<h4>ZEN GARDEN</h4>
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+								<p>9154 Ulat - Francisco Road, Tagaytay, Cavite, Philippines</p>
 								<br/>
-								<p>
-									Contact No.: 0912 345 6789<br/>
-									Email: zengarden@email.com
-								</p>
+								<p>Smart: (63) 921-770-5634</p>
+								<p>Globe: (63) 917-861-6325</p>
+								<p>Landline: (02) 542-8741</p><br/>
+								<p>Email: zen.garden@yahoo.com</p>
 							</div>
 						</div>
 					</div>

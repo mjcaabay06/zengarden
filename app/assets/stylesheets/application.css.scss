@@ -30,6 +30,19 @@ body.colorscheme-1 .search-container button{
 	background-color: #7c9e01;
 }
 
+body.colorscheme-1 button.btn-book:hover,
+body.colorscheme-1 button.btn-book:focus,
+body.colorscheme-1 a.btn-book:hover,
+body.colorscheme-1 a.btn-book:focus,
+body.colorscheme-1 button.btn-view:hover,
+body.colorscheme-1 button.btn-view:focus,
+body.colorscheme-1 .search-container button:hover,
+body.colorscheme-1 .search-container button:focus{
+	background-color: #90b701;
+	color: #fff;
+}
+
+
 body.colorscheme-1 .txt-con{
 	background-color: #eaeaea;
 }
@@ -78,6 +91,18 @@ body.colorscheme-2 a.btn-book,
 body.colorscheme-2 button.btn-view,
 body.colorscheme-2 .search-container button{
 	background-color: #5aa6b3;
+}
+
+body.colorscheme-2 button.btn-book:hover,
+body.colorscheme-2 button.btn-book:focus,
+body.colorscheme-2 a.btn-book:hover,
+body.colorscheme-2 a.btn-book:focus,
+body.colorscheme-2 button.btn-view:hover,
+body.colorscheme-2 button.btn-view:focus,
+body.colorscheme-2 .search-container button:hover,
+body.colorscheme-2 .search-container button:focus{
+	background-color: #6bafbb;
+	color: #fff;
 }
 
 body.colorscheme-2 .txt-con{
@@ -132,6 +157,18 @@ body.colorscheme-3 a.btn-book,
 body.colorscheme-3 button.btn-view,
 body.colorscheme-3 .search-container button{
 	background-color: #9d2f0c;
+}
+
+body.colorscheme-3 button.btn-book:hover,
+body.colorscheme-3 button.btn-book:focus,
+body.colorscheme-3 a.btn-book:hover,
+body.colorscheme-3 a.btn-book:focus,
+body.colorscheme-3 button.btn-view:hover,
+body.colorscheme-3 button.btn-view:focus,
+body.colorscheme-3 .search-container button:hover,
+body.colorscheme-3 .search-container button:focus{
+	background-color: #b5360e;
+	color: #fff;
 }
 
 body.colorscheme-3 .txt-con{
@@ -253,13 +290,13 @@ header .navbar{
 }
 
 .navbar-brand > img {
-	width: 150px;
+	width: 110px;
 }
 
 .navbar-nav > li a.nav-link{
 	text-transform: uppercase;
 	color: #fff;
-	line-height: 150px;
+	line-height: 110px;
 	padding: 0 15px;
 }
 

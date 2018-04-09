@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180404152237) do
+ActiveRecord::Schema.define(version: 20180405134911) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -121,6 +121,33 @@ ActiveRecord::Schema.define(version: 20180404152237) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "user_role_accesses", force: :cascade do |t|
+    t.bigint "access_id"
+    t.bigint "user_role_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["access_id"], name: "index_user_role_accesses_on_access_id"
+    t.index ["user_role_id"], name: "index_user_role_accesses_on_user_role_id"
+  end
+
+  create_table "user_roles", force: :cascade do |t|
+    t.string "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "email_address"
+    t.string "username"
+    t.string "password"
+    t.bigint "user_role_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "status_id"
+    t.index ["status_id"], name: "index_users_on_status_id"
+    t.index ["user_role_id"], name: "index_users_on_user_role_id"
+  end
+
   add_foreign_key "accesses", "access_categories"
   add_foreign_key "bookings", "booking_statuses"
   add_foreign_key "bookings", "clients"
@@ -130,4 +157,8 @@ ActiveRecord::Schema.define(version: 20180404152237) do
   add_foreign_key "inquiries", "events"
   add_foreign_key "room_aminities", "aminities"
   add_foreign_key "room_aminities", "rooms"
+  add_foreign_key "user_role_accesses", "accesses"
+  add_foreign_key "user_role_accesses", "user_roles"
+  add_foreign_key "users", "statuses"
+  add_foreign_key "users", "user_roles"
 end
