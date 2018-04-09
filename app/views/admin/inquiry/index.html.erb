@@ -1,0 +1,110 @@
+<div class="col-sm-12">
+	<div class="page-header">
+		<h1>
+			Inquiries
+			<%= form_for Inquiry.new, url: '/admin/inquiries', method: 'get', html: { class: 'form-inline pull-right'} do |f| %>
+				<% unless params[:from].blank? %>
+					<input type="hidden" name="from" value="<%= params[:from] %>">
+				<% end %>
+
+				<% unless params[:to].blank? %>
+					<input type="hidden" name="to" value="<%= params[:to] %>">
+				<% end %>
+
+				<% unless params[:status].blank? %>
+					<input type="hidden" name="status" value="<%= params[:status] %>">
+				<% end %>
+
+				<div class="form-group">
+					<input type="text" class="form-control" name="name" placeholder="Search by Name" value="<%= params[:name] unless params[:name].blank? %>">
+				</div>
+				<div class="form-group">
+					<button type="submit" value="Search" class="btn btn-primary">
+						<span class="glyphicon glyphicon-search"></span>
+					</button>
+				</div>
+			<% end %>
+		</h1>
+		<div class="clearfix"></div>
+	</div>
+</div>
+<div class="col-sm-12">
+	<%= form_for Inquiry.new, url: '/admin/inquiries', method: 'get', html: { class: 'form-inline pull-right'} do |f| %>
+		<% unless params[:status].blank? %>
+			<input type="hidden" name="status" value="<%= params[:status] %>">
+		<% end %>
+
+		<% unless params[:name].blank? %>
+			<input type="hidden" name="name" value="<%= params[:name] %>">
+		<% end %>
+
+		<div class="form-group">
+			<label class="form-label" for="from">From&nbsp;</label>
+			<input type="text" name="from" class="withdatepicker form-control" style="width: 110px" placeholder="mm/dd/yyyy" id="from" value="<%= params[:from] unless params[:from].blank? %>">
+		</div>
+		&emsp;
+		<div class="form-group">
+			<label class="form-label" for="to">To&nbsp;</label>
+			<input type="text" name="to" class="withdatepicker form-control" style="width: 110px" placeholder="mm/dd/yyyy" id="to" value="<%= params[:to] unless params[:to].blank? %>">
+		</div>
+		<div class="form-group">
+			<button type="submit" class="btn btn-default" title="Filter">
+				<span class="glyphicon glyphicon-filter"></span>
+			</button>
+		</div>
+		<div class="form-group">
+			<a href="/admin/inquiries" class="btn btn-default" title="Clear">
+				<span class="glyphicon glyphicon-remove"></span>
+			</a>
+		</div>
+	<% end %>
+	<div class="clearfix"></div>
+</div>
+<div class="col-sm-12">
+	<ul class="nav nav-tabs" role="tablist">
+		<li class="<%= 'active' if params[:status].blank? %>"><a href="/admin/inquiries" role="tab" aria-controls="active">Active</a></li>
+		<li class="<%= 'active' if params[:status].to_i == 1 %>"><a href="/admin/inquiries?status=1" role="tab" aria-controls="active">Unread</a></li>
+		<li class="<%= 'active' if params[:status].to_i == 2 %>"><a href="/admin/inquiries?status=2" role="tab" aria-controls="active">Read</a></li>
+	</ul>
+</div>
+<div class="col-sm-12">
+	<table class="table table-striped mt-20">
+		<thead>
+			<tr>
+				<th></th>
+				<th>ID</th>
+				<th>Name</th>
+				<th>Event</th>
+				<th>Event Date</th>
+				<th>Inquiry Received</th>
+				<th></th>
+			</tr>
+		</thead>
+		<tbody>
+			<% @inquiry.order("inquiries.created_at desc").each do |i| %>
+				<%
+					stat = ''
+					if i.status_id == 1
+						stat = 'success'
+					end	
+				%>
+				<tr class="<%= stat %>">
+					<td></td>
+					<td><%= i.id %></td>
+					<td><%= i.client.last_name + ', ' + i.client.first_name %></td>
+					<td><%= i.event.name %></td>
+					<td><%= i.event_date %></td>
+					<td><%= i.created_at.strftime('%Y-%m-%d') %></td>
+					<td class="pd-cell-control">
+						<a href="/admin/inquiries/<%= i.id %>" class="btn btn-xs" title="View">
+							<i class="glyphicon glyphicon-eye-open"></i>
+						</a>
+					</td>
+				</tr>
+			<% end %>
+		</tbody>
+	</table>
+	<div class="digg_pagination text-center">
+		<%= will_paginate @inquiry %>
+	</div>
+</div>

@@ -1,0 +1,76 @@
+<div class="col-sm-10 col-sm-offset-1">
+	<div class="page-header">
+		<h1><a href="/admin/inquiries" class="btn-back"><span class="glyphicon glyphicon-chevron-left"></span></a>&nbsp;Inquiry ID: <%= params[:id] %></h1>
+	</div>
+</div>
+<div class="col-sm-10 col-sm-offset-1">
+	<table class="table table-striped">
+		<thead>
+			<tr>
+				<th colspan="2">
+					<h4>Personal Information</h4>
+				</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td width="50%">First Name</td>
+				<td width="50%"><%= @client.first_name %></td>
+			</tr>
+			<tr>
+				<td>Middle Name</td>
+				<td><%= @client.middle_name %></td>
+			</tr>
+			<tr>
+				<td>Last Name</td>
+				<td><%= @client.last_name %></td>
+			</tr>
+		</tbody>
+	</table>
+	<table class="table table-striped">
+		<thead>
+			<tr>
+				<th colspan="2">
+					<h4>Contact Information</h4>
+				</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td width="50%">Address</td>
+				<td width="50%"><%= @client.address %></td>
+			</tr>
+			<tr>
+				<td>Email Address</td>
+				<td><%= @client.email_address %></td>
+			</tr>
+			<tr>
+				<td>Contact Number</td>
+				<td><%= @client.contact_number %></td>
+			</tr>
+		</tbody>
+	</table>
+	<table class="table table-striped">
+		<thead>
+			<tr>
+				<th colspan="2">
+					<h4>Inquiry Information</h4>
+				</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td width="50%">Event</td>
+				<td width="50%"><%= @inquiry.event.name %></td>
+			</tr>
+			<tr>
+				<td>Event Date</td>
+				<td><%= @inquiry.event_date.strftime('%b %e, %Y') %></td>
+			</tr>
+			<tr>
+				<td>Message</td>
+				<td><%= @inquiry.message %></td>
+			</tr>
+		</tbody>
+	</table>
+</div>
