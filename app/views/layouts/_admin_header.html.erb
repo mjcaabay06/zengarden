@@ -9,7 +9,7 @@
 				</button>
 				<!-- <a class="navbar-brand" href="#">Logo</a> -->
 				<a href="#" class="navbar-brand">
-					<img class="logo" src="/assets/zenGardenLogo.png" />
+					<img class="logo" src="https://s3-ap-northeast-1.amazonaws.com/zengardenph/zenGardenLogo-50x50.png" />
 				</a>
 			</div>
 			<div class="collapse navbar-collapse" id="myNavbar">
@@ -20,7 +20,7 @@
 							<a class="dropdown-toggle" data-toggle="dropdown" href="#"><%= ac.description %> <% if access.present? %><span class="caret"></span><% end %></a>
 							<% unless access.blank? %>
 								<ul class="dropdown-menu">
-									<% access.each do |a| %>
+									<% access.order(:description).each do |a| %>
 										<li><a href="<%= a.url %>"><%= a.description %></a></li>
 									<% end %>
 								</ul>

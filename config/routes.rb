@@ -34,6 +34,9 @@ Rails.application.routes.draw do
 
   namespace :admin do
     root "home#index"
+    get '/login' => 'home#login'
+    post '/login' => 'home#login_auth'
+    get '/logout' => 'home#logout'
     # get 'user/index'
 
     resources :reservation, path: 'reservations'

@@ -82,3 +82,64 @@ input.form-control{
 	background-color: #e7e7e7;
 	border-color: #dadada;
 }
+
+.digg_pagination {
+  background: white;
+  cursor: default;
+}
+.digg_pagination a, .digg_pagination span, .digg_pagination em {
+  padding: 0.2em 0.5em;
+  display: block;
+  float: left;
+  margin-right: 1px;
+  margin: 2px;
+}
+.digg_pagination .disabled {
+  color: #999999;
+  border: 1px solid #dddddd;
+  -webkit-border-radius: 25px;
+  -moz-border-radius: 25px;
+  -ms-border-radius: 25px;
+  -o-border-radius: 25px;
+  border-radius: 25px;
+}
+.digg_pagination .current {
+  font-style: normal;
+  font-weight: bold;
+  background: #008cba;
+  color: white;
+  border: 1px solid #008cba;
+  -webkit-border-radius: 25px;
+  -moz-border-radius: 25px;
+  -ms-border-radius: 25px;
+  -o-border-radius: 25px;
+  border-radius: 25px;
+}
+.digg_pagination a {
+  text-decoration: none;
+  color: #008cba;
+  border: 1px solid #008cba;
+  -webkit-border-radius: 25px;
+  -moz-border-radius: 25px;
+  -ms-border-radius: 25px;
+  -o-border-radius: 25px;
+  border-radius: 25px;
+  margin-top: 2px;
+}
+.digg_pagination a:hover, .digg_pagination a:focus {
+  color: #008cba;
+  border-color: #008cba;
+}
+.digg_pagination .page_info {
+  background: #2e6ab1;
+  color: white;
+  padding: 0.4em 0.6em;
+  width: 22em;
+  margin-bottom: 0.3em;
+  text-align: center;
+}
+.digg_pagination .page_info b {
+  color: #000033;
+  background: #6aa6ed;
+  padding: 0.1em 0.25em;
+}
