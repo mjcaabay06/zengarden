@@ -1,0 +1,104 @@
+<div class="col-sm-10 col-sm-offset-1">
+	<div class="page-header">
+		<h1><a href="/admin/reservations" class="btn-back"><span class="glyphicon glyphicon-chevron-left"></span></a>&nbsp;Booking ID: <%= params[:id] %><br>
+		<span style="width: 23px;display:inline-block;"></span>
+		<small style="text-transform: capitalize; font-size: 75%"><%= @booking.room.name %>&emsp;-&emsp;Php <%= @booking.total_amount.to_i %></small></h1>
+	</div>
+</div>
+
+<%= form_for Booking.new, url: '/admin/reservations/update-status', method: 'post', html: { class: 'form-inline' } do |f| %>
+	<div class="col-sm-10 col-sm-offset-1">
+		<input type="hidden" name="id" value="<%= params[:id]%>">
+		<div class="col-sm-2">
+			<div class="row">
+				<%= select('booking_status', 'id', BookingStatus.all.collect { |a| [a.description, a.id] }, {selected: @booking.booking_status_id}, class: 'form-control', name: 'booking_status_id' ) %>
+			</div>
+		</div>
+		<div class="col-sm-2">
+			<div class="row">
+				<button type="submit" class="btn btn-primary">Update Status</button>
+			</div>
+		</div>
+		<div class="clearfix"></div>
+	</div>
+<% end %>
+
+<div class="col-sm-10 col-sm-offset-1">
+	<table class="table table-striped">
+		<thead>
+			<tr>
+				<th colspan="2">
+					<h4>Personal Information</h4>
+				</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td width="50%">First Name</td>
+				<td width="50%"><%= @client.first_name %></td>
+			</tr>
+			<tr>
+				<td>Middle Name</td>
+				<td><%= @client.middle_name %></td>
+			</tr>
+			<tr>
+				<td>Last Name</td>
+				<td><%= @client.last_name %></td>
+			</tr>
+		</tbody>
+	</table>
+	<table class="table table-striped">
+		<thead>
+			<tr>
+				<th colspan="2">
+					<h4>Contact Information</h4>
+				</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td width="50%">Address</td>
+				<td width="50%"><%= @client.address %></td>
+			</tr>
+			<tr>
+				<td>Email Address</td>
+				<td><%= @client.email_address %></td>
+			</tr>
+			<tr>
+				<td>Contact Number</td>
+				<td><%= @client.contact_number %></td>
+			</tr>
+		</tbody>
+	</table>
+	<table class="table table-striped">
+		<thead>
+			<tr>
+				<th colspan="2">
+					<h4>Booking Information</h4>
+				</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td width="50%">Room</td>
+				<td width="50%"><%= @booking.room.name %></td>
+			</tr>
+			<tr>
+				<td>Check In Date</td>
+				<td><%= @booking.checked_in.strftime('%b %e, %Y') %></td>
+			</tr>
+			<tr>
+				<td>Check Out Date</td>
+				<td><%= @booking.checked_out.strftime('%b %e, %Y') %></td>
+			</tr>
+			<tr>
+				<td>Guest</td>
+				<td><%= @booking.guest %></td>
+			</tr>
+			<tr>
+				<td>Total Amount</td>
+				<td>Php <%= @booking.total_amount.to_i %></td>
+			</tr>
+		</tbody>
+	</table>
+</div>

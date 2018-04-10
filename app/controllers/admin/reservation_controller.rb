@@ -16,4 +16,18 @@ class Admin::ReservationController < Admin::ApplicationController
 
 		@booking = @booking.paginate(:per_page => 20,:page => params[:page])
 	end
+
+	def show
+		@booking = Booking.find(params[:id])
+		@client = @booking.client
+	end
+
+	def update_status
+		@booking = Booking.find(params[:id])
+		@booking.booking_status_id = params[:booking_status_id]
+
+		if @booking.save
+			redirect_to "/admin/reservations/#{params[:id]}"
+		end
+	end
 end

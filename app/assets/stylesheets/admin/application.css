@@ -47,7 +47,8 @@ header > .navbar.admin #myNavbar a:focus{
 	color: #3d2b29;
 }
 
-input.form-control{
+input.form-control,
+select.form-control{
 	border: 1px solid #ccc;
 }
 
